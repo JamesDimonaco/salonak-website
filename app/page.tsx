@@ -138,8 +138,8 @@ export default function Home() {
       <section id="download" className="py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">Get Started with SALONAK</h2>
-          <div className="flex justify-center space-x-4">
-            <Button asChild size="lg">
+          <div className="flex flex-col gap-4 md:flex-row justify-around w-full">
+            <Button asChild size="lg" className="w-full md:w-auto">
               <Link href="https://play.google.com/store/apps/details?id=com.salonak">
                 Download on Google Play
               </Link>
