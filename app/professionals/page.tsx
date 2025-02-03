@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Clock,
+  DollarSign,
+  HeartHandshake,
+  Scissors,
+  Brush,
+  HandMetal,
+  Ruler,
+  Eye,
+  ClipboardList,
+  UserCircle,
+  Calendar,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "For Professionals",
@@ -12,24 +25,33 @@ const benefits = [
   {
     title: "Flexibility",
     description: "Set your own schedule and work at your convenience.",
+    icon: Clock,
   },
   {
     title: "Earnings",
     description:
       "Earn competitively with 70% of service fees going directly to you.",
+    icon: DollarSign,
   },
   {
     title: "Support",
     description: "Receive ongoing support and resources to help you succeed.",
+    icon: HeartHandshake,
   },
 ];
 
 const serviceTypes = [
-  "Hair Stylists",
-  "Makeup Artists",
-  "Nail Technicians",
-  "Grooming Experts",
-  "Eyelash Technicians",
+  { name: "Hair Stylists", icon: Scissors },
+  { name: "Makeup Artists", icon: Brush },
+  { name: "Nail Technicians", icon: HandMetal },
+  { name: "Grooming Experts", icon: Ruler },
+  { name: "Eyelash Technicians", icon: Eye },
+];
+
+const registrationSteps = [
+  { step: "Provide the required documents", icon: ClipboardList },
+  { step: "Complete your profile", icon: UserCircle },
+  { step: "Start accepting bookings", icon: Calendar },
 ];
 
 export default function ProfessionalsPage() {
@@ -44,35 +66,51 @@ export default function ProfessionalsPage() {
       </p>
       <h2 className="text-3xl font-bold mb-8 text-center">Benefits</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {benefits.map((benefit, index) => (
-          <Card key={index}>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p>{benefit.description}</p>
-            </CardContent>
-          </Card>
-        ))}
+        {benefits.map((benefit, index) => {
+          const Icon = benefit.icon;
+          return (
+            <Card key={index}>
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="w-6 h-6" />
+                  <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                </div>
+                <p>{benefit.description}</p>
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
       <h2 className="text-3xl font-bold mb-8 text-center">Service Types</h2>
-      <ul className="list-disc list-inside text-lg mb-12 max-w-md mx-auto">
-        {serviceTypes.map((service, index) => (
-          <li key={index} className="mb-2">
-            {service}
-          </li>
-        ))}
+      <ul className="list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
+        {serviceTypes.map((service, index) => {
+          const Icon = service.icon;
+          return (
+            <li key={index} className="flex items-center gap-3 p-2">
+              <Icon className="w-5 h-5" />
+              <span className="text-lg">{service.name}</span>
+            </li>
+          );
+        })}
       </ul>
       <h2 className="text-3xl font-bold mb-8 text-center">
         Registration Process
       </h2>
-      <p className="text-lg text-left md:text-center mb-8 pl-4">
-        Join us in three simple steps:
-        <br />
-        1) Provide the required documents
-        <br />
-        2) Complete your profile
-        <br />
-        3) Start accepting bookings
-      </p>
+      <div className="max-w-2xl mx-auto mb-12">
+        {registrationSteps.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div key={index} className="flex items-center gap-4 mb-4">
+              <div className="bg-muted p-2 rounded-full">
+                <Icon className="w-6 h-6" />
+              </div>
+              <p className="text-lg">
+                {index + 1}) {item.step}
+              </p>
+            </div>
+          );
+        })}
+      </div>
       <div className="text-center mb-12">
         <Button size="lg">Join Now</Button>
       </div>

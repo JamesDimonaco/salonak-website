@@ -4,6 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { testimonials } from "@/content/testimonials";
+import {
+  Scissors,
+  Brush,
+  Ruler,
+  HandMetal,
+  Eye,
+  Clock,
+  Award,
+  Calendar,
+  Shield,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,7 +22,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[600px]">
         <Image
-          src="/images/hero.jpg"
+          src="/hero.webp"
           alt="SALONAK - At-home beauty and grooming services"
           fill
           className="object-cover"
@@ -44,31 +55,39 @@ export default function Home() {
                 title: "Convenience",
                 description:
                   "Book professional grooming and beauty services with just a few taps.",
+                icon: Clock,
               },
               {
                 title: "Quality",
                 description:
                   "Access top-rated professionals at your convenience.",
+                icon: Award,
               },
               {
                 title: "Flexibility",
                 description: "Choose appointment times that fit your schedule.",
+                icon: Calendar,
               },
               {
                 title: "Safety",
                 description:
                   "All professionals are thoroughly vetted for your peace of mind.",
+                icon: Shield,
               },
-            ].map((benefit, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p>{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            ].map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Icon className="w-6 h-6" />
+                      <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                    </div>
+                    <p>{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -85,37 +104,46 @@ export default function Home() {
                 title: "Haircuts & Styling",
                 description:
                   "Professional haircuts and styling at your convenience.",
+                icon: Scissors,
               },
               {
                 title: "Makeup Services",
                 description:
                   "Look your best for any occasion with our expert makeup artists.",
+                icon: Brush,
               },
               {
                 title: "Grooming Services",
                 description:
                   "Experience premium grooming, including beard trims and shaves.",
+                icon: Ruler,
               },
               {
                 title: "Nail Care",
                 description:
                   "Indulge in luxurious manicure and pedicure services.",
+                icon: HandMetal,
               },
               {
                 title: "Eyelash Extensions",
                 description:
                   "Enhance your beauty with long-lasting, professional lash extensions.",
+                icon: Eye,
               },
-            ].map((service, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {service.title}
-                  </h3>
-                  <p>{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            ].map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Icon className="w-6 h-6" />
+                      <h3 className="text-xl font-semibold">{service.title}</h3>
+                    </div>
+                    <p>{service.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

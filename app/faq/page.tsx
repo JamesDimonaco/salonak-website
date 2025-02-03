@@ -53,10 +53,7 @@ export default function FAQPage() {
             collapsible
             className="w-full max-w-3xl mx-auto"
           >
-            <AccordionItem
-              value={`item-${index}`}
-              className="p-2 border rounded-lg"
-            >
+            <AccordionItem value={`item-${index}`} className="p-2 ">
               <AccordionTrigger className="text-lg">
                 {faq.question}
               </AccordionTrigger>

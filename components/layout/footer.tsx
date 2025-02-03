@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { siteConfig } from "@/content/siteConfig";
 import Image from "next/image";
+import { Apple, Smartphone } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-background">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Image
@@ -51,6 +52,25 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Download Our App</h3>
+            <div className="space-y-4">
+              <a
+                href="#"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+              >
+                <Apple className="w-5 h-5" />
+                <span>Download on App Store</span>
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+              >
+                <Smartphone className="w-5 h-5" />
+                <span>Get it on Google Play</span>
+              </a>
+            </div>
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center">
