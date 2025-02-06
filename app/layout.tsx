@@ -5,7 +5,8 @@ import { Footer } from "@/components/layout/footer";
 import { siteConfig } from "@/content/siteConfig";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import type React from "react"; // Added import for React
+import type React from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
