@@ -14,8 +14,7 @@ export const siteConfig = {
     { name: "Privacy Policy", href: "/privacy" },
   ],
   socialMedia: [
-    { name: "Facebook", href: "https://facebook.com/salonak" },
-    { name: "Instagram", href: "https://instagram.com/salonak" },
-    { name: "Twitter", href: "https://twitter.com/salonak" },
+    { name: "Facebook", href: "https://www.facebook.com/salonak.co.uk/" },
+    { name: "Instagram", href: "https://www.instagram.com/salonak.co.uk/" },
   ],
 };

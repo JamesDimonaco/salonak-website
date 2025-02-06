@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { testimonials } from "@/content/testimonials";
 import {
@@ -77,15 +76,23 @@ export default function Home() {
             ].map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Icon className="w-6 h-6" />
-                      <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                <div
+                  key={index}
+                  className="group relative p-6 bg-background rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg -z-10"></div>
+                  <div className="flex flex-col items-center text-center">
+                    <div className="p-3 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <p>{benefit.description}</p>
-                  </CardContent>
-                </Card>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
               );
             })}
           </div>
@@ -133,15 +140,23 @@ export default function Home() {
             ].map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Icon className="w-6 h-6" />
-                      <h3 className="text-xl font-semibold">{service.title}</h3>
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl bg-background p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+                >
+                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-primary/10 transition-all duration-300 group-hover:scale-150"></div>
+                  <div className="relative">
+                    <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3 text-primary ring-4 ring-primary/10">
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <p>{service.description}</p>
-                  </CardContent>
-                </Card>
+                    <h3 className="mb-2 text-xl font-semibold">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
               );
             })}
           </div>
@@ -163,16 +178,26 @@ export default function Home() {
       </section>
 
       {/* Download CTA */}
-      <section id="download" className="py-16">
-        <div className="container mx-auto px-4 text-center">
+      <section id="download" className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10"></div>
+        <div className="container mx-auto px-4 text-center relative">
           <h2 className="text-3xl font-bold mb-8">Get Started with SALONAK</h2>
-          <div className="flex flex-col gap-4 md:flex-row justify-around w-full">
-            <Button asChild size="lg" className="w-full md:w-auto">
+          <div className="flex flex-col gap-4 md:flex-row justify-center w-full max-w-xl mx-auto">
+            <Button
+              asChild
+              size="lg"
+              className="w-full md:w-auto bg-primary hover:bg-primary/90"
+            >
               <Link href="https://play.google.com/store/apps/details?id=com.salonak">
                 Download on Google Play
               </Link>
             </Button>
-            <Button asChild size="lg">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="w-full md:w-auto border-primary text-primary hover:bg-primary/10"
+            >
               <Link href="https://apps.apple.com/app/salonak/id123456789">
                 Download on the App Store
               </Link>
