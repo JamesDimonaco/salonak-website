@@ -19,21 +19,21 @@ export function Header() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center  bg-black  px-2 rounded-full"
+              className="flex items-center bg-black px-3 rounded-full"
             >
               <Image
                 src="/logo.jpg"
                 alt={siteConfig.name}
-                width={40}
-                height={40}
-                className="h-10 w-auto rounded-full"
+                width={48}
+                height={48}
+                className="h-12 w-auto rounded-full"
               />
               <Image
                 src="/logo-name.jpg"
                 alt={siteConfig.name}
-                width={200}
-                height={200}
-                className="h-10 w-auto rounded-r-full"
+                width={240}
+                height={240}
+                className="h-12 w-auto rounded-r-full"
               />
             </Link>
           </div>
