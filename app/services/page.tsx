@@ -6,7 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Scissors, Brush, Ruler, HandMetal, Eye } from "lucide-react";
+import { Scissors, Brush, Ruler, Eye } from "lucide-react";
+import { GiFingernail } from "react-icons/gi";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -44,7 +45,7 @@ const services = [
       "Pamper yourself with our indulgent manicure and pedicure services.",
     details:
       "Comprehensive nail care including manicures, pedicures, gel applications, and nail art by experienced technicians.",
-    icon: HandMetal,
+    icon: GiFingernail,
   },
   {
     title: "Eyelash Extensions",

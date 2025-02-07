@@ -7,13 +7,13 @@ import {
   HeartHandshake,
   Scissors,
   Brush,
-  HandMetal,
   Ruler,
   Eye,
   ClipboardList,
   UserCircle,
   Calendar,
 } from "lucide-react";
+import { GiFingernail } from "react-icons/gi";
 
 export const metadata: Metadata = {
   title: "For Professionals",
@@ -43,7 +43,7 @@ const benefits = [
 const serviceTypes = [
   { name: "Hair Stylists", icon: Scissors },
   { name: "Makeup Artists", icon: Brush },
-  { name: "Nail Technicians", icon: HandMetal },
+  { name: "Nail Technicians", icon: GiFingernail },
   { name: "Grooming Experts", icon: Ruler },
   { name: "Eyelash Technicians", icon: Eye },
 ];
