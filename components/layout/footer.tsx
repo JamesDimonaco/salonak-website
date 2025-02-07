@@ -67,7 +67,7 @@ export function Footer() {
                 <FontAwesomeIcon
                   icon={faAppStoreIos}
                   className="h-8 w-8 text-[#0484eb]"
-                />{" "}
+                />
                 <span>Download on App Store</span>
               </a>
               <a

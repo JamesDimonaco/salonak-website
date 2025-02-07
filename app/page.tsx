@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { testimonials } from "@/content/testimonials";
+import { ImageCarousel } from "@/components/ui/image-carousel";
 import {
   Scissors,
   Brush,
@@ -14,6 +15,41 @@ import {
   Shield,
 } from "lucide-react";
 import { GiFingernail } from "react-icons/gi";
+
+const carouselImages = [
+  {
+    src: "/carousel/image1.jpeg",
+    alt: "Professional haircut service",
+  },
+  {
+    src: "/carousel/image2.jpeg",
+    alt: "Makeup application service",
+  },
+  {
+    src: "/carousel/image3.jpeg",
+    alt: "Nail care service",
+  },
+  {
+    src: "/carousel/image4.jpeg",
+    alt: "Eyelash extension service",
+  },
+  {
+    src: "/carousel/image5.jpeg",
+    alt: "Professional grooming service",
+  },
+  {
+    src: "/carousel/image6.jpeg",
+    alt: "Professional beauty service",
+  },
+  {
+    src: "/carousel/image7.jpeg",
+    alt: "Professional styling service",
+  },
+  {
+    src: "/carousel/image8.jpeg",
+    alt: "Professional makeup service",
+  },
+];
 
 export default function Home() {
   return (
@@ -98,7 +134,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* Image Carousel */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Professional Services in Action
+          </h2>
+          <ImageCarousel images={carouselImages} />
+        </div>
+      </section>
       {/* Featured Services */}
       <section className="py-16">
         <div className="container mx-auto px-4">
