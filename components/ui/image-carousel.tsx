@@ -19,38 +19,42 @@ interface ImageCarouselProps {
 
 export function ImageCarousel({ images }: ImageCarouselProps) {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-        loop: true,
-      }}
-      plugins={[
-        Autoplay({
-          delay: 2000,
-          stopOnInteraction: false,
-        }),
-      ]}
-      className="w-full max-w-6xl mx-auto"
-    >
-      <CarouselContent className="-ml-4">
-        {images.map((image, index) => (
-          <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/3">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform hover:scale-105 duration-500"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <div className="flex justify-center gap-4 mt-8">
-        <CarouselPrevious />
-        <CarouselNext />
-      </div>
-    </Carousel>
+    <div className="relative w-full max-w-[90vw] mx-auto">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 10000,
+            stopOnInteraction: false,
+          }),
+        ]}
+      >
+        <CarouselContent>
+          {images.map((image, index) => (
+            <CarouselItem
+              key={index}
+              className="md:basis-1/3 lg:basis-1/3 pl-4"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform hover:scale-105 duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="hidden md:block">
+          <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
+          <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
+        </div>
+      </Carousel>
+    </div>
   );
 }
