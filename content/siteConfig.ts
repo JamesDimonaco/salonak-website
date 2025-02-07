@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "SALONAK",
-  description: "Transform Your Home into a Beauty & Grooming Haven",
+  description: "",
   navigation: [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },

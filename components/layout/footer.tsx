@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { siteConfig } from "@/content/siteConfig";
 import Image from "next/image";
-import { Apple, Smartphone } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGooglePlay,
+  faAppStoreIos,
+} from "@fortawesome/free-brands-svg-icons";
 
 export function Footer() {
   return (
@@ -11,11 +15,11 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src="/logo.png"
+                src="/logo.jpg"
                 alt={siteConfig.name}
                 width={40}
                 height={40}
-                className="h-10 w-auto"
+                className="h-10 w-auto rounded-full"
               />
               <h3 className="text-lg font-semibold">About Us</h3>
             </div>
@@ -60,14 +64,20 @@ export function Footer() {
                 href="#"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
               >
-                <Apple className="w-5 h-5" />
+                <FontAwesomeIcon
+                  icon={faAppStoreIos}
+                  className="h-8 w-8 text-[#0484eb]"
+                />{" "}
                 <span>Download on App Store</span>
               </a>
               <a
                 href="#"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
               >
-                <Smartphone className="w-5 h-5" />
+                <FontAwesomeIcon
+                  icon={faGooglePlay}
+                  className="h-8 w-8 text-[#0F9D58]"
+                />
                 <span>Get it on Google Play</span>
               </a>
             </div>

@@ -7,13 +7,13 @@ import {
   Scissors,
   Brush,
   Ruler,
-  HandMetal,
   Eye,
   Clock,
   Award,
   Calendar,
   Shield,
 } from "lucide-react";
+import { GiFingernail } from "react-icons/gi";
 
 export default function Home() {
   return (
@@ -43,12 +43,12 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-muted">
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-16">
             Benefits of the SALONAK App
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {[
               {
                 title: "Convenience",
@@ -78,20 +78,20 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="group relative p-6 bg-background rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2"
+                  className="flex flex-col items-center text-center group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg -z-10"></div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="p-3 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
+                  <div className="relative mb-6">
+                    <div className="absolute inset-0 bg-primary/10 rounded-full scale-150 blur-xl transition-transform group-hover:scale-175"></div>
+                    <div className="relative bg-background rounded-full p-4 shadow-sm">
+                      <Icon className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {benefit.description}
-                    </p>
                   </div>
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed max-w-xs">
+                    {benefit.description}
+                  </p>
                 </div>
               );
             })}
@@ -105,7 +105,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">
             Featured Services
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
               {
                 title: "Haircuts & Styling",
@@ -129,7 +129,7 @@ export default function Home() {
                 title: "Nail Care",
                 description:
                   "Indulge in luxurious manicure and pedicure services.",
-                icon: HandMetal,
+                icon: GiFingernail,
               },
               {
                 title: "Eyelash Extensions",
@@ -140,22 +140,19 @@ export default function Home() {
             ].map((service, index) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={index}
-                  className="group relative overflow-hidden rounded-xl bg-background p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
-                >
-                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-primary/10 transition-all duration-300 group-hover:scale-150"></div>
-                  <div className="relative">
-                    <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3 text-primary ring-4 ring-primary/10">
-                      <Icon className="h-6 w-6" />
+                <div key={index} className="group relative">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-primary/10 rounded-full scale-150 blur-lg transition-transform group-hover:scale-175"></div>
+                      <div className="relative p-3 bg-background rounded-full">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {service.description}
-                    </p>
+                    <h3 className="text-xl font-semibold">{service.title}</h3>
                   </div>
+                  <p className="text-muted-foreground pl-16">
+                    {service.description}
+                  </p>
                 </div>
               );
             })}
