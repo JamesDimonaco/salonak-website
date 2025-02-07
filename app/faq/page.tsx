@@ -37,6 +37,25 @@ const faqs = [
     answer:
       "Visit our 'Professionals' page, follow the registration steps, and submit the required documents. Once approved, you'll be ready to start accepting bookings.",
   },
+  {
+    question: "How can I delete my account?",
+    answer: (
+      <>
+        To delete your account, please fill out our{" "}
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScQ2b7FRUkI8sFf3JTeleI24H-SypMNN5h5m7n_pFtUIxaerg/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          account deletion request form
+        </a>
+        . Once submitted, your account and all associated data will be
+        permanently deleted within 90 days. For further assistance, contact
+        support@salonak.co.uk.
+      </>
+    ),
+  },
 ];
 
 export default function FAQPage() {
